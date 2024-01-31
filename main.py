@@ -16,46 +16,6 @@ for key, df in dataframes.items():
 
 print(list(dataframes))
 
-# Path to the main folder on your desktop
-main_folder_path = "/Users/nick/Desktop/MLB Prop Data"
-
-# List of subfolder names
-subfolder_names = [
-    "R_batter_1",
-    "L_batter_2",
-    "R_batter_3",
-    "pitcher_vs_L_hitter",
-    "pitcher_vs_R_hitter",
-]
-
-# Dictionary to store dataframes
-dataframes = {}
-
-# Iterate through each subfolder
-for subfolder_name in subfolder_names:
-    # Get the path to the specific subfolder
-    subfolder_path = os.path.join(main_folder_path, subfolder_name)
-
-    # Get a list of CSV files in the subfolder
-    csv_files = [
-        f.path
-        for f in os.scandir(subfolder_path)
-        if f.is_file() and f.name.endswith(".csv")
-    ]
-
-    # Iterate through each CSV file
-    for csv_file in csv_files:
-        # Extract the file name without the extension
-        file_name_without_extension = os.path.splitext(os.path.basename(csv_file))[0]
-
-        # Create the dataframe name
-        dataframe_name = f"{subfolder_name}_{file_name_without_extension}"
-
-        # Read the CSV file into a pandas dataframe
-        df = pd.read_csv(csv_file)
-
-        # Store the dataframe in the dictionary with the created name as the key
-        dataframes[dataframe_name] = df
 
 # Assuming dataframes is your dictionary
 for df_name, df in dataframes.items():
