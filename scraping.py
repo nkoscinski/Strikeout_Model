@@ -2,6 +2,7 @@ import time
 import pandas as pd
 from selenium import webdriver
 from bs4 import BeautifulSoup
+from io import StringIO
 
 # Use Safari driver
 driver = webdriver.Safari()
@@ -63,7 +64,12 @@ for batter in batter_info:
 
             # Convert the table HTML to a Pandas DataFrame
             if table_element:
-                df = pd.read_html(str(table_element), header=0)[0]
+                # Create a StringIO object from the HTML string
+                html_io = StringIO(str(table_element))
+
+                # Pass the StringIO object to pd.read_html
+                df = pd.read_html(html_io, header=0)[0]
+
                 # Instead of saving the DataFrame as a CSV file, store it in the dictionary
                 dataframes[f"{batter['name']}_B{balls}_S{strikes}"] = df
 
@@ -102,11 +108,14 @@ for pitcher in pitcher_info:
 
                 # Convert the table HTML to a Pandas DataFrame
                 if table_element:
-                    df = pd.read_html(str(table_element), header=0)[0]
+                    # Create a StringIO object from the HTML string
+                    html_io = StringIO(str(table_element))
+
+                    # Pass the StringIO object to pd.read_html
+                    df = pd.read_html(html_io, header=0)[0]
+
                     # Instead of saving the DataFrame as a CSV file, store it in the dictionary
-                    dataframes[
-                        f"{pitcher['name']}_vs_{batter_hand}_B{balls}_S{strikes}"
-                    ] = df
+                    dataframes[f"{batter['name']}_B{balls}_S{strikes}"] = df
 
                 # Close the current window
                 driver.close()
