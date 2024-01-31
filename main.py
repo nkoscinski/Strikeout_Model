@@ -1,6 +1,20 @@
 import os
 import pandas as pd
 import numpy as np
+import scraping
+
+# Get the dataframes from scraping.py
+dataframes = scraping.get_data()
+
+# Assuming dataframes is your dictionary
+for df_name, df in dataframes.items():
+    [...]
+
+# Assuming your dictionary is named 'dataframes'
+for key, df in dataframes.items():
+    [...]
+
+print(list(dataframes))
 
 # Path to the main folder on your desktop
 main_folder_path = "/Users/nick/Desktop/MLB Prop Data"
