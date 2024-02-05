@@ -7,7 +7,7 @@ from io import StringIO
 # Use Safari driver
 driver = webdriver.Safari()
 
-# List of batter URLs
+# List of batter URLs and handedness
 batter_info = [
     {
         "name": "batter_1",
@@ -15,6 +15,8 @@ batter_info = [
     },
     # Jose Abreu
 ]
+
+batter_handedness = ["R"]  # Right-handed batter
 
 # List of pitcher URL
 pitcher_info = [
@@ -72,7 +74,7 @@ for batter in batter_info:
 # Iterate over pitchers
 for pitcher in pitcher_info:
     # Create a subdirectory for each batter hand
-    for batter_hand in ["L", "R"]:
+    for batter_hand in batter_handedness:
         # Iterate over pitch counts
         for balls in range(4):  # 0 to 3 balls
             for strikes in range(3):  # 0 to 2 strikes
