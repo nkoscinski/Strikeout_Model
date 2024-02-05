@@ -118,7 +118,3 @@ for pitcher in pitcher_info:
 if "__main__" == __name__:
     for key, df in dataframes.items():
         print(f"{key}:\n{df}\n")
-
-# Return the dictionary of dataframes
-def get_data():
-    return dataframes
