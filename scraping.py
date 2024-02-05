@@ -10,7 +10,7 @@ driver = webdriver.Safari()
 # List of batter URLs and handedness
 batter_info = [
     {
-        "name": "batter_1",
+        "name": "batter",
         "url": "https://www.brooksbaseball.net//h_tabs.php?player=547989&gFilt=&time=month&minmax=ci&var=po&s_type=2&startDate=01/01/2023&endDate=01/01/2024&balls={}&strikes={}&b_hand=R",
     },
     # Jose Abreu
