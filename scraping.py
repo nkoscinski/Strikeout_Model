@@ -14,16 +14,6 @@ batter_info = [
         "url": "https://www.brooksbaseball.net//h_tabs.php?player=547989&gFilt=&time=month&minmax=ci&var=po&s_type=2&startDate=01/01/2023&endDate=01/01/2024&balls={}&strikes={}&b_hand=R",
     },
     # Jose Abreu
-    {
-        "name": "batter_2",
-        "url": "https://www.brooksbaseball.net//h_tabs.php?player=457705&gFilt=&time=month&minmax=ci&var=po&s_type=2&startDate=01/01/2023&endDate=01/01/2024&balls={}&strikes={}&b_hand=R",
-    },
-    # Andrew McCutchen
-    {
-        "name": "batter_3",
-        "url": "https://www.brooksbaseball.net//h_tabs.php?player=608369&gFilt=&time=month&minmax=ci&var=po&s_type=2&startDate=01/01/2023&endDate=01/01/2024&balls={}&strikes={}&b_hand=R",
-    },
-    # Corey Seager
 ]
 
 # List of pitcher URL
@@ -115,7 +105,7 @@ for pitcher in pitcher_info:
                     df = pd.read_html(html_io, header=0)[0]
 
                     # Instead of saving the DataFrame as a CSV file, store it in the dictionary
-                    dataframes[f"{batter['name']}_B{balls}_S{strikes}"] = df
+                    dataframes[f"{pitcher['name']}_B{balls}_S{strikes}_{batter_hand}"] = df
 
                 # Close the current window
                 driver.close()
