@@ -73,7 +73,9 @@ transition_matrix = pd.DataFrame()
 # Iterate over all pitch counts and corresponding results
 for pitch_count, result_df in zip(pitch_counts, all_results):
     # Add the "Sum" row from result_df to sum_df
-    transition_matrix = pd.concat([transition_matrix, result_df.loc["Sum"].to_frame().T])
+    transition_matrix = pd.concat(
+        [transition_matrix, result_df.loc["Sum"].to_frame().T]
+    )
 
 # Set the index of sum_df to pitch_counts
 transition_matrix.index = pitch_counts
