@@ -63,7 +63,7 @@ for batter in batter_info:
                 df = pd.read_html(html_io, header=0)[0]
 
                 # Instead of saving the DataFrame as a CSV file, store it in the dictionary
-                dataframes[f"{batter['name']}_B{balls}_S{strikes}"] = df
+                dataframes[f"{batter['name']}_{balls}_{strikes}"] = df
 
             # Close current window
             driver.close()
@@ -107,7 +107,7 @@ for pitcher in pitcher_info:
                     df = pd.read_html(html_io, header=0)[0]
 
                     # Instead of saving the DataFrame as a CSV file, store it in the dictionary
-                    dataframes[f"{pitcher['name']}_B{balls}_S{strikes}_{batter_hand}"] = df
+                    dataframes[f"{pitcher['name']}_{balls}_{strikes}"] = df
 
                 # Close the current window
                 driver.close()
@@ -115,6 +115,9 @@ for pitcher in pitcher_info:
                 # Switch back to the main window
                 driver.switch_to.window(driver.window_handles[0])
 
+if "__main__" == __name__:
+    for key, df in dataframes.items():
+        print(f"{key}:\n{df}\n")
 
 # Return the dictionary of dataframes
 def get_data():
