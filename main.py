@@ -11,3 +11,5 @@ batter_handedness = "R"
 dataframes = scrape_data(batter_url, pitcher_url, batter_handedness)
 
 transition_matrix = calculate_transition_matrix(dataframes)
+
+total_probability = calculate_total_probability(transition_matrix)
