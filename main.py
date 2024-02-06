@@ -11,8 +11,15 @@ batters = [
 
 pitcher_url = "https://www.brooksbaseball.net//tabs.php?player=543135&p_hand=-1&ppos=-1&cn=200&compType=none&gFilt=&time=month&minmax=ci&var=po&s_type=2&startDate=03/30/2007&endDate=11/11/2023&balls={}&strikes={}&b_hand={}"
 
+times_faced = 3  # The number of times the pitcher faces each batter
+total_strikeouts = 0  # Initialize the total strikeouts
+
 for i, batter in enumerate(batters, start=1):
     dataframes = scrape_data(batter["url"], pitcher_url, batter["handedness"])
     transition_matrix = calculate_transition_matrix(dataframes)
     total_probability = calculate_total_probability(transition_matrix)
-    print(f"Batter {i} Total probaility: {total_probability}")
+    strikeouts = total_probability * times_faced  # Calculate the forecasted strikeouts for this batter
+    total_strikeouts += strikeouts  # Add the forecasted strikeouts to the total
+    print(f"Batter {i} Total probaility: {total_probability}, Forecasted strikeouts: {strikeouts}")
+
+print(f"Total forecasted strikeouts for the pitcher: {total_strikeouts}")
