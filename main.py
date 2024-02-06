@@ -8,4 +8,6 @@ pitcher_url = "https://www.brooksbaseball.net//tabs.php?player=543135&p_hand=-1&
 
 batter_handedness = "R"
 
-scrape_data(batter_url, pitcher_url, batter_handedness)
+dataframes = scrape_data(batter_url, pitcher_url, batter_handedness)
+
+transition_matrix = calculate_transition_matrix(dataframes)
