@@ -3,9 +3,18 @@ from hitters import calculate_transition_matrix
 from markov import calculate_total_probability
 
 batters = [
-    {"url": "https://www.brooksbaseball.net//h_tabs.php?player=547989&gFilt=&time=month&minmax=ci&var=po&s_type=2&startDate=01/01/2023&endDate=01/01/2024&balls={}&strikes={}&b_hand=R", "handedness": "R"},
-    {"url": "https://www.brooksbaseball.net//h_tabs.php?player=462101&gFilt=&time=month&minmax=ci&var=po&s_type=2&startDate=01/01/2023&endDate=01/01/2024&balls={}&strikes={}&b_hand=R", "handedness": "R"},
-    {"url": "https://www.brooksbaseball.net//h_tabs.php?player=656514&gFilt=&time=month&minmax=ci&var=po&s_type=2&startDate=01/01/2023&endDate=01/01/2024&balls={}&strikes={}&b_hand=R", "handedness": "L"},
+    {
+        "url": "https://www.brooksbaseball.net//h_tabs.php?player=547989&gFilt=&time=month&minmax=ci&var=po&s_type=2&startDate=01/01/2023&endDate=01/01/2024&balls={}&strikes={}&b_hand=R",
+        "handedness": "R",
+    },
+    {
+        "url": "https://www.brooksbaseball.net//h_tabs.php?player=462101&gFilt=&time=month&minmax=ci&var=po&s_type=2&startDate=01/01/2023&endDate=01/01/2024&balls={}&strikes={}&b_hand=R",
+        "handedness": "R",
+    },
+    {
+        "url": "https://www.brooksbaseball.net//h_tabs.php?player=656514&gFilt=&time=month&minmax=ci&var=po&s_type=2&startDate=01/01/2023&endDate=01/01/2024&balls={}&strikes={}&b_hand=R",
+        "handedness": "L",
+    },
     # Add more batters as needed
 ]
 
@@ -18,7 +27,9 @@ for i, batter in enumerate(batters, start=1):
     dataframes = scrape_data(batter["url"], pitcher_url, batter["handedness"])
     transition_matrix = calculate_transition_matrix(dataframes)
     total_probability = calculate_total_probability(transition_matrix)
-    strikeouts = total_probability * times_faced  # Calculate the forecasted strikeouts for this batter
+    strikeouts = (
+        total_probability * times_faced
+    )  # Calculate the forecasted strikeouts for this batter
     total_strikeouts += strikeouts  # Add the forecasted strikeouts to the total
     # print(f"Batter {i} Total probaility: {total_probability}, Forecasted strikeouts: {strikeouts}")
 
