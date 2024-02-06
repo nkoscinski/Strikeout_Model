@@ -9,4 +9,9 @@ Additional Notes:
 - The final product will work seamlessly for any pitcher and lineup
 - I am also working on making sure the math behind the transition matrix and final strikeout probability is correct
 
-If anyone happens to look at this and have any questions and/or suggestions I would be happy to talk!
+Final Note:
+- This model in no way encompasses all the various factors that go into a pitcher striking out a batter
+- It is simply a fun project that I am working on to learn more about data science within baseball
+- As I have more time to work on this project, I will continue to add more features and make it more robust
+
+If anyone happens to look at this and have any questions and/or suggestions I would love to talk!
