@@ -20,6 +20,6 @@ for i, batter in enumerate(batters, start=1):
     total_probability = calculate_total_probability(transition_matrix)
     strikeouts = total_probability * times_faced  # Calculate the forecasted strikeouts for this batter
     total_strikeouts += strikeouts  # Add the forecasted strikeouts to the total
-    print(f"Batter {i} Total probaility: {total_probability}, Forecasted strikeouts: {strikeouts}")
+    # print(f"Batter {i} Total probaility: {total_probability}, Forecasted strikeouts: {strikeouts}")
 
 print(f"Total forecasted strikeouts for the pitcher: {total_strikeouts}")
