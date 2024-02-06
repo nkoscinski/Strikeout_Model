@@ -1,7 +1,7 @@
 This is a Python-based project that does the following:
-- scrapes baseball data from the web (Brooksbaseball)
-- processes that data for the pitcher and batter based on various pitch counts
-- use that data to create a transition matrix that attempt to predict the probability of a given pitcher striking out a given batter
+- Scrapes baseball data from the web (Brooksbaseball)
+- Processes that data for the pitcher and batter based on various pitch counts
+- Use that data to create a transition matrix that attempt to predict the probability of a given pitcher striking out a given batter
 
 Additional Notes:
 - I am just coming back to this project after a few weeks of not working on it
