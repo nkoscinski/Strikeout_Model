@@ -28,4 +28,5 @@ for sequence in sequences:
     total_probability += sequence_probability
 
 # Print the total probability
-print(total_probability)
+if __name__ == "__main__":
+    print(total_probability)
