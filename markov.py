@@ -1,4 +1,7 @@
-def calculate_total_probability(transition_matrix):
+import pandas as pd
+
+
+def calculate_total_probability(transition_matrix: pd.DataFrame) -> float:
     transition_matrix = transition_matrix[["Strike", "Ball", "BIP"]]
 
     # Normalize the transition matrix
