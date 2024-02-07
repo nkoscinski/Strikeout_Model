@@ -5,7 +5,9 @@ from bs4 import BeautifulSoup
 from io import StringIO
 
 
-def scrape_data(batter_url, pitcher_url, batter_handedness):
+def scrape_data(
+    batter_url: str, pitcher_url: str, batter_handedness: str
+) -> dict[str, pd.DataFrame]:
     # Use Safari driver
     driver = webdriver.Safari()
 
