@@ -2,46 +2,58 @@ from scraping import scrape_data
 from hitters import calculate_transition_matrix
 from markov import calculate_total_probability
 
+batter_1_id = "672515"
+batter_2_id = "677950"
+batter_3_id = "572233"
+batter_4_id = "682998"
+batter_5_id = "446334"
+batter_6_id = "672695"
+batter_7_id = "606466"
+batter_8_id = "666971"
+batter_9_id = "502054"
+
 batters = [
     {
-        "url": "https://www.brooksbaseball.net//h_tabs.php?player=682998&gFilt=&time=month&minmax=ci&var=po&s_type=2&startDate=01/01/2023&endDate=01/01/2024&balls={}&strikes={}&b_hand=R",
+        "url": f"https://www.brooksbaseball.net//h_tabs.php?player={batter_1_id}Filt=&time=month&minmax=ci&var=po&s_type=2&startDate=01/01/2023&endDate=01/01/2024&balls={{}}&strikes={{}}&b_hand=R",
         "handedness": "L",
     },
     {
-        "url": "https://www.brooksbaseball.net//h_tabs.php?player=606466&gFilt=&time=month&minmax=ci&var=po&s_type=2&startDate=01/01/2023&endDate=01/01/2024&balls={}&strikes={}&b_hand=R",
+        "url": f"https://www.brooksbaseball.net//h_tabs.php?player={batter_2_id}&gFilt=&time=month&minmax=ci&var=po&s_type=2&startDate=01/01/2023&endDate=01/01/2024&balls={{}}&strikes={{}}&b_hand=R",
         "handedness": "L",
     },
     {
-        "url": "https://www.brooksbaseball.net//h_tabs.php?player=672515&gFilt=&time=month&minmax=ci&var=po&s_type=2&startDate=01/01/2023&endDate=01/01/2024&balls={}&strikes={}&b_hand=R",
+        "url": f"https://www.brooksbaseball.net//h_tabs.php?player={batter_3_id}&gFilt=&time=month&minmax=ci&var=po&s_type=2&startDate=01/01/2023&endDate=01/01/2024&balls={{}}&strikes={{}}&b_hand=R",
         "handedness": "R",
     },
     {
-        "url": "https://www.brooksbaseball.net//h_tabs.php?player=572233&gFilt=&time=month&minmax=ci&var=po&s_type=2&startDate=01/01/2023&endDate=01/01/2024&balls={}&strikes={}&b_hand=R",
+        "url": f"https://www.brooksbaseball.net//h_tabs.php?player={batter_4_id}&gFilt=&time=month&minmax=ci&var=po&s_type=2&startDate=01/01/2023&endDate=01/01/2024&balls={{}}&strikes={{}}&b_hand=R",
         "handedness": "R",
     },
     {
-        "url": "https://www.brooksbaseball.net//h_tabs.php?player=502054&gFilt=&time=month&minmax=ci&var=po&s_type=2&startDate=01/01/2023&endDate=01/01/2024&balls={}&strikes={}&b_hand=R",
+        "url": f"https://www.brooksbaseball.net//h_tabs.php?player={batter_5_id}&gFilt=&time=month&minmax=ci&var=po&s_type=2&startDate=01/01/2023&endDate=01/01/2024&balls={{}}&strikes={{}}&b_hand=R",
         "handedness": "R",
     },
     {
-        "url": "https://www.brooksbaseball.net//h_tabs.php?player=666971&gFilt=&time=month&minmax=ci&var=po&s_type=2&startDate=01/01/2023&endDate=01/01/2024&balls={}&strikes={}&b_hand=R",
+        "url": f"https://www.brooksbaseball.net//h_tabs.php?player={batter_6_id}&gFilt=&time=month&minmax=ci&var=po&s_type=2&startDate=01/01/2023&endDate=01/01/2024&balls={{}}&strikes={{}}&b_hand=R",
         "handedness": "R",
     },
     {
-        "url": "https://www.brooksbaseball.net//h_tabs.php?player=677950&gFilt=&time=month&minmax=ci&var=po&s_type=2&startDate=01/01/2023&endDate=01/01/2024&balls={}&strikes={}&b_hand=R",
+        "url": f"https://www.brooksbaseball.net//h_tabs.php?player={batter_7_id}&gFilt=&time=month&minmax=ci&var=po&s_type=2&startDate=01/01/2023&endDate=01/01/2024&balls={{}}&strikes={{}}&b_hand=R",
         "handedness": "L",
     },
     {
-        "url": "https://www.brooksbaseball.net//h_tabs.php?player=446334&gFilt=&time=month&minmax=ci&var=po&s_type=2&startDate=01/01/2023&endDate=01/01/2024&balls={}&strikes={}&b_hand=R",
+        "url": f"https://www.brooksbaseball.net//h_tabs.php?player={batter_8_id}&gFilt=&time=month&minmax=ci&var=po&s_type=2&startDate=01/01/2023&endDate=01/01/2024&balls={{}}&strikes={{}}&b_hand=R",
         "handedness": "R",
     },
     {
-        "url": "https://www.brooksbaseball.net//h_tabs.php?player=672695&gFilt=&time=month&minmax=ci&var=po&s_type=2&startDate=01/01/2023&endDate=01/01/2024&balls={}&strikes={}&b_hand=R",
+        "url": f"https://www.brooksbaseball.net//h_tabs.php?player={batter_9_id}&gFilt=&time=month&minmax=ci&var=po&s_type=2&startDate=01/01/2023&endDate=01/01/2024&balls={{}}&strikes={{}}&b_hand=R",
         "handedness": "L",
     },
 ]
 
-pitcher_url = "https://www.brooksbaseball.net//tabs.php?player=543135&p_hand=-1&ppos=-1&cn=200&compType=none&gFilt=&time=month&minmax=ci&var=po&s_type=2&startDate=01/01/2023&endDate=01/01/2024&balls={}&strikes={}&b_hand={}"
+pitcher_id = "543135"
+
+pitcher_url = f"https://www.brooksbaseball.net//tabs.php?player={pitcher_id}&p_hand=-1&ppos=-1&cn=200&compType=none&gFilt=&time=month&minmax=ci&var=po&s_type=2&startDate=01/01/2023&endDate=01/01/2024&balls={{}}&strikes={{}}&b_hand={{}}"
 
 times_faced = 2.33  # The number of times the pitcher faces each batter
 total_strikeouts = 0  # Initialize the total strikeouts
