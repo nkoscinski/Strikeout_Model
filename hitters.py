@@ -1,7 +1,7 @@
 import pandas as pd
 
 
-def calculate_transition_matrix(dataframes):
+def calculate_transition_matrix(dataframes: dict[str, pd.DataFrame]) -> pd.DataFrame:
     # List of all possible pitch counts
     pitch_counts = [
         "0_0",
