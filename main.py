@@ -15,7 +15,30 @@ batters = [
         "url": "https://www.brooksbaseball.net//h_tabs.php?player=656514&gFilt=&time=month&minmax=ci&var=po&s_type=2&startDate=01/01/2023&endDate=01/01/2024&balls={}&strikes={}&b_hand=R",
         "handedness": "L",
     },
-    # Add more batters as needed
+    {
+        "url": "https://www.brooksbaseball.net//h_tabs.php?player=656514&gFilt=&time=month&minmax=ci&var=po&s_type=2&startDate=01/01/2023&endDate=01/01/2024&balls={}&strikes={}&b_hand=R",
+        "handedness": "L",
+    },
+    {
+        "url": "https://www.brooksbaseball.net//h_tabs.php?player=656514&gFilt=&time=month&minmax=ci&var=po&s_type=2&startDate=01/01/2023&endDate=01/01/2024&balls={}&strikes={}&b_hand=R",
+        "handedness": "L",
+    },
+    {
+        "url": "https://www.brooksbaseball.net//h_tabs.php?player=656514&gFilt=&time=month&minmax=ci&var=po&s_type=2&startDate=01/01/2023&endDate=01/01/2024&balls={}&strikes={}&b_hand=R",
+        "handedness": "L",
+    },
+    {
+        "url": "https://www.brooksbaseball.net//h_tabs.php?player=656514&gFilt=&time=month&minmax=ci&var=po&s_type=2&startDate=01/01/2023&endDate=01/01/2024&balls={}&strikes={}&b_hand=R",
+        "handedness": "L",
+    },
+    {
+        "url": "https://www.brooksbaseball.net//h_tabs.php?player=656514&gFilt=&time=month&minmax=ci&var=po&s_type=2&startDate=01/01/2023&endDate=01/01/2024&balls={}&strikes={}&b_hand=R",
+        "handedness": "L",
+    },
+    {
+        "url": "https://www.brooksbaseball.net//h_tabs.php?player=656514&gFilt=&time=month&minmax=ci&var=po&s_type=2&startDate=01/01/2023&endDate=01/01/2024&balls={}&strikes={}&b_hand=R",
+        "handedness": "L",
+    },
 ]
 
 pitcher_url = "https://www.brooksbaseball.net//tabs.php?player=543135&p_hand=-1&ppos=-1&cn=200&compType=none&gFilt=&time=month&minmax=ci&var=po&s_type=2&startDate=01/01/2023&endDate=01/01/2024&balls={}&strikes={}&b_hand={}"
