@@ -11,6 +11,7 @@ batter_6_id = "672695"
 batter_7_id = "606466"
 batter_8_id = "666971"
 batter_9_id = "502054"
+pitcher_id = "543135"
 
 batters = [
     {
@@ -51,7 +52,6 @@ batters = [
     },
 ]
 
-pitcher_id = "543135"
 
 pitcher_url = f"https://www.brooksbaseball.net//tabs.php?player={pitcher_id}&p_hand=-1&ppos=-1&cn=200&compType=none&gFilt=&time=month&minmax=ci&var=po&s_type=2&startDate=01/01/2023&endDate=01/01/2024&balls={{}}&strikes={{}}&b_hand={{}}"
 
