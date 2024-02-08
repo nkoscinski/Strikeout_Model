@@ -1,17 +1,18 @@
 from scraping import scrape_data
 from hitters import calculate_transition_matrix
 from markov import calculate_total_probability
+from baseball_id import Lookup
 
-batter_1_id = "672515"
-batter_2_id = "677950"
-batter_3_id = "572233"
-batter_4_id = "682998"
-batter_5_id = "446334"
-batter_6_id = "672695"
-batter_7_id = "606466"
-batter_8_id = "666971"
-batter_9_id = "502054"
-pitcher_id = "543135"
+batter_1_id = Lookup.from_names(["Corbin Carroll"])["mlb_id"].astype(int)
+batter_2_id = Lookup.from_names(["Ketel Marte"])["mlb_id"].astype(int)
+batter_3_id = Lookup.from_names(["Gabriel Moreno"])["mlb_id"].astype(int)
+batter_4_id = Lookup.from_names(["Christian Walker"])["mlb_id"].astype(int)
+batter_5_id = Lookup.from_names(["Tommy Pham"])["mlb_id"].astype(int)
+batter_6_id = Lookup.from_names(["Lourdes Gurriel Jr."])["mlb_id"].astype(int)
+batter_7_id = Lookup.from_names(["Alek Thomas"])["mlb_id"].astype(int)
+batter_8_id = Lookup.from_names(["Evan Longoria"])["mlb_id"].astype(int)
+batter_9_id = Lookup.from_names(["Emmanual Rivera"])["mlb_id"].astype(int)
+pitcher_id = Lookup.from_names(["Geraldo Perdomo"])["mlb_id"].astype(int)
 
 batters = [
     {
