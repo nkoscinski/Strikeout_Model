@@ -3,21 +3,43 @@ from hitters import calculate_transition_matrix
 from markov import calculate_total_probability
 from baseball_id import Lookup
 
-batter_1_id = Lookup.from_names(["Corbin Carroll"])["mlb_id"].astype(int)
-batter_2_id = Lookup.from_names(["Ketel Marte"])["mlb_id"].astype(int)
-batter_3_id = Lookup.from_names(["Gabriel Moreno"])["mlb_id"].astype(int)
-batter_4_id = Lookup.from_names(["Christian Walker"])["mlb_id"].astype(int)
-batter_5_id = Lookup.from_names(["Tommy Pham"])["mlb_id"].astype(int)
-batter_6_id = Lookup.from_names(["Lourdes Gurriel Jr."])["mlb_id"].astype(int)
-batter_7_id = Lookup.from_names(["Alek Thomas"])["mlb_id"].astype(int)
-batter_8_id = Lookup.from_names(["Evan Longoria"])["mlb_id"].astype(int)
-batter_9_id = Lookup.from_names(["Emmanual Rivera"])["mlb_id"].astype(int)
-pitcher_id = Lookup.from_names(["Geraldo Perdomo"])["mlb_id"].astype(int)
+
+batter_1 = "Corbin Carroll"
+batter_2 = "Ketel Marte"
+batter_3 = "Gabriel Moreno"
+batter_4 = "Christian Walker"
+batter_5 = "Tommy Pham"
+batter_6 = "Lourdes Gurriel Jr."
+batter_7 = "Alek Thomas"
+batter_8 = "Evan Longoria"
+batter_9 = "Pavin Smith"
+pitcher = "Nathan Eovaldi"
+
+
+batter_1_id = Lookup.from_names([batter_1])["mlb_id"].astype(str).values[0].split('.')[0]
+batter_1_bats = Lookup.from_names([batter_1])["bats"]
+batter_2_id = Lookup.from_names([batter_2])["mlb_id"].astype(str).values[0].split('.')[0]
+batter_2_bats = Lookup.from_names([batter_2])["bats"]
+batter_3_id = Lookup.from_names([batter_3])["mlb_id"].astype(str).values[0].split('.')[0]
+batter_3_bats = Lookup.from_names([batter_3])["bats"]
+batter_4_id = Lookup.from_names([batter_4])["mlb_id"].astype(str).values[0].split('.')[0]
+batter_4_bats = Lookup.from_names([batter_4])["bats"]
+batter_5_id = Lookup.from_names([batter_5])["mlb_id"].astype(str).values[0].split('.')[0]
+batter_5_bats = Lookup.from_names([batter_5])["bats"]
+batter_6_id = Lookup.from_names([batter_6])["mlb_id"].astype(str).values[0].split('.')[0]
+batter_6_bats = Lookup.from_names([batter_6])["bats"]
+batter_7_id = Lookup.from_names([batter_7])["mlb_id"].astype(str).values[0].split('.')[0]
+batter_7_bats = Lookup.from_names([batter_7])["bats"]
+batter_8_id = Lookup.from_names([batter_8])["mlb_id"].astype(str).values[0].split('.')[0]
+batter_8_bats = Lookup.from_names([batter_8])["bats"]
+batter_9_id = Lookup.from_names([batter_9])["mlb_id"].astype(str).values[0].split('.')[0]
+batter_9_bats = Lookup.from_names([batter_9])["bats"]
+pitcher_id = Lookup.from_names([pitcher])["mlb_id"].astype(str).values[0].split('.')[0]
 
 batters = [
     {
         "url": f"https://www.brooksbaseball.net//h_tabs.php?player={batter_1_id}Filt=&time=month&minmax=ci&var=po&s_type=2&startDate=01/01/2023&endDate=01/01/2024&balls={{}}&strikes={{}}&b_hand=R",
-        "handedness": "L",
+        "handedness": batter_1_bats,
     },
     {
         "url": f"https://www.brooksbaseball.net//h_tabs.php?player={batter_2_id}&gFilt=&time=month&minmax=ci&var=po&s_type=2&startDate=01/01/2023&endDate=01/01/2024&balls={{}}&strikes={{}}&b_hand=R",
